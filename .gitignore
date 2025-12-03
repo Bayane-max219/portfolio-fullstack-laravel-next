@@ -1,0 +1,39 @@
+# Root gitignore for Laravel + Next.js mono-repo
+
+# Node / Next.js
+node_modules/
+.npm/
+.next/
+out/
+
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/.env.local
+frontend/.env.*.local
+
+# Laravel / PHP
+vendor/
+backend/vendor/
+backend/storage/
+backend/bootstrap/cache/
+backend/.env
+backend/.env.*
+backend/storage/*.key
+
+# Environment files (anywhere)
+.env
+.env.*
+
+# Logs
+*.log
+storage/logs/
+backend/storage/logs/
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
