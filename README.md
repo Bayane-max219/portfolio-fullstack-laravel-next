@@ -98,18 +98,43 @@ Ordre de navigation du portfolio :
 
 ### Aperçu visuel
 
+#### 01 – Accueil
 ![01 – Accueil](screenshoots/01-Acueil.png)
-![02 – Vitrine – Projets](screenshoots/02-Vitrine_Projet.png)
+
+#### 02 – Vitrine – Projets par stack
+![02 – Vitrine – Projets par stack](screenshoots/02-Vitrine_Projet.png)
+
+#### 03 – Vitrine – Relevés de notes
 ![03 – Vitrine – Relevés de notes](screenshoots/03-Vitrine_Releve_Note.png)
+
+#### 04 – Vitrine – Certificats & attestations
 ![04 – Vitrine – Certificats & attestations](screenshoots/04-Vitrine_Certificat.png)
+
+#### 05 – Profil – CV (vue principale)
 ![05 – Profil – CV (vue principale)](screenshoots/05-Profil.png)
+
+#### 06 – Profil – CV (suite / bas de page)
 ![06 – Profil – CV (suite / bas de page)](screenshoots/06-Profil_suite.png)
+
+#### 07 – Connexion admin
 ![07 – Connexion admin](screenshoots/07-Connexion_Admin.png)
+
+#### 08 – Tableau de bord admin
 ![08 – Tableau de bord admin](screenshoots/08-Tableau_de_bord_Admin.png)
+
+#### 09 – Création d'un projet dans l'admin
 ![09 – Création d'un projet dans l'admin](screenshoots/09-Creation_projet_Admin.png)
+
+#### 10 – Ajout des captures d'écran d'un projet
 ![10 – Ajout des captures d'écran d'un projet](screenshoots/10-Ajout_des_captures.png)
+
+#### 11 – Ajout d'un diplôme / certificat
 ![11 – Ajout d'un diplôme / certificat](screenshoots/11-Ajout_diplome_Admin.png)
+
+#### 12 – Édition des informations du profil
 ![12 – Édition des informations du profil](screenshoots/12-Ajout_Profil.png)
+
+#### 13 – Détails d'un projet sur la vitrine
 ![13 – Détails d'un projet sur la vitrine](screenshoots/13-Details_Projet_Vitrine.png)
 
 ---
