@@ -67,35 +67,6 @@ Les captures sont dans le dossier :
 screenshoots/
 ```
 
-Ordre de navigation du portfolio :
-
-1. **Accueil**  
-   `screenshoots/01-Acueil.png`
-2. **Vitrine – Projets par stack**  
-   `screenshoots/02-Vitrine_Projet.png`
-3. **Vitrine – Relevés de notes**  
-   `screenshoots/03-Vitrine_Releve_Note.png`
-4. **Vitrine – Certificats & attestations**  
-   `screenshoots/04-Vitrine_Certificat.png`
-5. **Profil – CV (vue principale)**  
-   `screenshoots/05-Profil.png`
-6. **Profil – CV (suite / bas de page)**  
-   `screenshoots/06-Profil_suite.png`
-7. **Connexion admin**  
-   `screenshoots/07-Connexion_Admin.png`
-8. **Tableau de bord admin**  
-   `screenshoots/08-Tableau_de_bord_Admin.png`
-9. **Création d'un projet dans l'admin**  
-   `screenshoots/09-Creation_projet_Admin.png`
-10. **Ajout des captures d'écran d'un projet**  
-    `screenshoots/10-Ajout_des_captures.png`
-11. **Ajout d'un diplôme / certificat**  
-    `screenshoots/11-Ajout_diplome_Admin.png`
-12. **Édition des informations du profil**  
-    `screenshoots/12-Ajout_Profil.png`
-13. **Détails d'un projet sur la vitrine**  
-    `screenshoots/13-Details_Projet_Vitrine.png`
-
 ### Aperçu visuel
 
 #### 01 – Accueil
