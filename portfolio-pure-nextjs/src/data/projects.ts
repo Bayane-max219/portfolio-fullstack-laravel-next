@@ -100,4 +100,44 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Bayane-max219/portfolio-fullstack-laravel-next",
     coverImageUrl: "/storage/project_media/B9El7uGtg5Tn0RpE8fSIKOX2VrYJWFZH5OyyJmqx.png",
   },
+  {
+    id: 11,
+    title: "Gestion de stock – Java Swing",
+    stack: "Java Swing + Hibernate + MySQL",
+    category: "fullstack",
+    shortDescription:
+      "Application de gestion de stock de type vitrine recruteur : interface moderne, gestion des produits et mouvements de stock, rapports, authentification et tests unitaires.",
+    githubUrl: "https://github.com/Bayane-max219/Gestion_Stock_Java_Swing",
+    coverImageUrl: "/storage/project_media/03_Java_swing.jpg",
+  },
+  {
+    id: 12,
+    title: "Gestion de budget personnelle",
+    stack: "C# / .NET 8 WinForms + SQLite",
+    category: "fullstack",
+    shortDescription:
+      "Application de gestion de budget personnelle : comptes utilisateurs séparés avec revenus, dépenses et soldes isolés par utilisateur.",
+    githubUrl: "https://github.com/Bayane-max219/Gestion_Portefeuil",
+    coverImageUrl: "/storage/project_media/03-Gestion_portefeuil.jpg",
+  },
+  {
+    id: 13,
+    title: "Outage Alerts MG – suivi des coupures",
+    stack: "NestJS API + Angular 17 frontend",
+    category: "fullstack",
+    shortDescription:
+      "Plateforme complète inspirée du contexte JIRAMA pour suivre et gérer les coupures d'électricité / eau, avec rôles (client, agent, admin), API NestJS et frontend Angular 17.",
+    githubUrl: "https://github.com/Bayane-max219/outage-alerts-mg",
+    coverImageUrl: "/storage/project_media/01-Outage_Jirama.jpg",
+  },
+  {
+    id: 14,
+    title: "Alerte Communautaire Cyclone & Sécurité",
+    stack: "Express.js API + Angular frontend",
+    category: "fullstack",
+    shortDescription:
+      "Application web full stack pour la diffusion d'alertes cyclone, pluie, inondation et sécurité partagées par la communauté et des contributeurs de confiance.",
+    githubUrl: "https://github.com/Bayane-max219/Alerte_Communautaire_Cyclone_Securite",
+    coverImageUrl: "/storage/project_media/01-Alerte_cyclone.png",
+  },
 ];

@@ -44,7 +44,7 @@ Motivé, autonome et capable de travailler sur des applications modernes, je sui
   phone: "0348349886",
   githubUrl: "https://github.com/Bayane-max219",
   linkedinUrl: "https://www.linkedin.com/in/miguel-singcol-bayane",
-  websiteUrl: "",
+  websiteUrl: "https://miguel-next-portfolio.vercel.app/",
 };
 
 export const educations: Education[] = [
@@ -81,9 +81,11 @@ export const skills: Skill[] = [
   { name: "Laravel", category: "framework", level: 85 },
   { name: "Symfony", category: "framework", level: 85 },
   { name: "Django", category: "framework", level: 80 },
-  { name: "React Native", category: "framework", level: 90 },
+  { name: "React.js", category: "framework", level: 90 },
   { name: "Vue.js", category: "framework", level: 85 },
   { name: "Next.js", category: "framework", level: 85 },
+  { name: "Angular", category: "framework", level: 85 },
+  { name: "Express.js / NestJS", category: "framework", level: 80 },
   { name: "Git / GitHub", category: "tool", level: 85 },
   { name: "Postman", category: "tool", level: 75 },
   { name: "Résolution de problèmes", category: "soft", level: 85 },

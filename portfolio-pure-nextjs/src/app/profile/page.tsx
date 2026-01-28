@@ -92,7 +92,7 @@ export default function ProfilePage() {
                 )}
                 {profile.websiteUrl && (
                   <li>
-                    Site web :
+                    Portfolio :
                     <a
                       href={profile.websiteUrl}
                       target="_blank"
@@ -104,6 +104,15 @@ export default function ProfilePage() {
                   </li>
                 )}
               </ul>
+              <div className="pt-3">
+                <a
+                  href="/storage/Bayane_Miguel_Singcol_CV.pdf"
+                  download
+                  className="inline-flex items-center rounded-full border border-emerald-400/80 bg-emerald-500/90 px-4 py-1.5 text-xs font-semibold text-slate-950 shadow-sm hover:bg-emerald-400/90"
+                >
+                  Télécharger le CV (PDF)
+                </a>
+              </div>
             </article>
           </section>
 
