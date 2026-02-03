@@ -126,4 +126,11 @@ export const certificates: PortfolioDocument[] = [
     institution: "CFPM",
     imageUrl: "/storage/certificates/qZdcm93IcfzrprZAPuxCxrPy22CF0UN9PXwK6jML.jpg",
   },
+{
+  id: 14,
+  kind: "diplome",
+  title: "Diplome de Licence - Informatique Risques et Décision (IRD)",
+  institution: "ESMIA",
+  imageUrl: "/storage/diplome/diplomeLicence.jpg",
+},
 ];
