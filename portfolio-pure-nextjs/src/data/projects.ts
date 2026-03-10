@@ -140,4 +140,37 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Bayane-max219/Alerte_Communautaire_Cyclone_Securite",
     coverImageUrl: "/storage/project_media/01-Alerte_cyclone.png",
   },
+  {
+    id: 15,
+    title: "Gestion de réservation de salles",
+    stack: "Java Swing + MongoDB",
+    category: "fullstack",
+    shortDescription:
+      "Application de réservation (admin / client) : CRUD des salles, réservations avec vérification des conflits d’horaires, paiements partiels et blocage en cas de solde impayé.",
+    githubUrl:
+      "https://github.com/Bayane-max219/reservation-chambres-swing-mongodb?tab=readme-ov-file",
+    coverImageUrl: "/storage/project_media/04-Ajout_Chambre.jpg",
+  },
+  {
+    id: 16,
+    title: "Gestion de parkings & réservations",
+    stack: "Spring Boot 3 + Angular + MySQL",
+    category: "fullstack",
+    shortDescription:
+      "Application avec authentification JWT et rôles (ADMIN / OWNER / CLIENT) : gestion des parkings, réservations, statut payé/confirmé et revenus (jour/semaine/mois) côté propriétaire.",
+    githubUrl:
+      "https://github.com/Bayane-max219/Gestion_Parking_Spring_Boot_-_Angular",
+    coverImageUrl:
+      "/storage/project_media/03-Tableau_de_bord_proprietaire.png",
+  },
+  {
+    id: 17,
+    title: "ERP universitaire (mini-système)",
+    stack: "JEE + JPA + JSF + Docker",
+    category: "fullstack",
+    shortDescription:
+      "Mini-système ERP pour la gestion universitaire, avec stack JEE/JPA/JSF et conteneurisation Docker.",
+    githubUrl: "https://github.com/Bayane-max219/Gestion-universitaire-ERP",
+    coverImageUrl: "/storage/project_media/02-Dashboard_admin.png",
+  },
 ];
