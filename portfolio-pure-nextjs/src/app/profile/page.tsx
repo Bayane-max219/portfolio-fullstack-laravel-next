@@ -1,6 +1,100 @@
 import { MainNav } from "@/components/MainNav";
 import { educations, languages, profile, skills } from "@/data/profile";
 import { projects } from "@/data/projects";
+import {
+  SiAngular,
+  SiCss,
+  SiDjango,
+  SiDocker,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiPhp,
+  SiPostgresql,
+  SiPostman,
+  SiPython,
+  SiReact,
+  SiSpring,
+  SiSqlite,
+  SiSwagger,
+  SiSymfony,
+  SiVuedotjs,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+
+type SkillIconDefinition = {
+  icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
+  color?: string;
+};
+
+function getSkillIconDefinition(name: string): SkillIconDefinition | null {
+  const n = name.trim().toLowerCase();
+
+  const map: Record<string, SkillIconDefinition> = {
+    "html": { icon: SiHtml5, color: "#e34f26" },
+    "html/css": { icon: SiHtml5, color: "#e34f26" },
+    "css": { icon: SiCss, color: "#1572B6" },
+    "javascript": { icon: SiJavascript, color: "#F7DF1E" },
+    "php": { icon: SiPhp, color: "#777BB4" },
+    "python": { icon: SiPython, color: "#3776AB" },
+    "java": { icon: FaJava, color: "#E11F21" },
+
+    "laravel": { icon: SiLaravel, color: "#FF2D20" },
+    "react": { icon: SiReact, color: "#61DAFB" },
+    "react.js": { icon: SiReact, color: "#61DAFB" },
+    "next.js": { icon: SiNextdotjs, color: "#ffffff" },
+    "nextjs": { icon: SiNextdotjs, color: "#ffffff" },
+    "angular": { icon: SiAngular, color: "#DD0031" },
+    "django": { icon: SiDjango, color: "#092E20" },
+    "spring boot": { icon: SiSpring, color: "#6DB33F" },
+    "spring": { icon: SiSpring, color: "#6DB33F" },
+    "symfony": { icon: SiSymfony, color: "#ffffff" },
+    "vue.js": { icon: SiVuedotjs, color: "#4FC08D" },
+    "vue": { icon: SiVuedotjs, color: "#4FC08D" },
+
+    "mysql": { icon: SiMysql, color: "#4479A1" },
+    "postgresql": { icon: SiPostgresql, color: "#4169E1" },
+    "sqlite": { icon: SiSqlite, color: "#003B57" },
+    "mongodb": { icon: SiMongodb, color: "#47A248" },
+
+    "docker": { icon: SiDocker, color: "#2496ED" },
+    "git / github": { icon: SiGithub, color: "#ffffff" },
+    "git": { icon: SiGit, color: "#F05032" },
+    "github": { icon: SiGithub, color: "#ffffff" },
+    "postman / swagger": { icon: SiPostman, color: "#FF6C37" },
+    "postman": { icon: SiPostman, color: "#FF6C37" },
+    "swagger": { icon: SiSwagger, color: "#85EA2D" },
+  };
+
+  return map[n] ?? null;
+}
+
+function SkillChip({ name, showIcon }: { name: string; showIcon: boolean }) {
+  const n = name.trim().toLowerCase();
+  const isHtmlCss = showIcon && (n === "html/css" || n === "html css");
+
+  const def = showIcon ? getSkillIconDefinition(name) : null;
+  const Icon = def?.icon;
+
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/60 px-2.5 py-1 text-xs text-slate-200">
+      {isHtmlCss ? (
+        <>
+          <SiHtml5 className="h-4 w-4" style={{ color: "#e34f26" }} />
+          <SiCss className="h-4 w-4" style={{ color: "#1572B6" }} />
+        </>
+      ) : (
+        Icon && <Icon className="h-4 w-4" style={def?.color ? { color: def.color } : undefined} />
+      )}
+      <span>{name}</span>
+    </span>
+  );
+}
 
 export default function ProfilePage() {
   const mainFrameworks = new Set(["laravel", "react", "react.js", "next.js", "nextjs"]);
@@ -203,12 +297,11 @@ export default function ProfilePage() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {group.items.map((name) => (
-                        <span
+                        <SkillChip
                           key={name}
-                          className="inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/60 px-2.5 py-1 text-xs text-slate-200"
-                        >
-                          {name}
-                        </span>
+                          name={name}
+                          showIcon={group.title !== "Qualités (soft skills)"}
+                        />
                       ))}
                     </div>
                   </div>
@@ -237,6 +330,31 @@ export default function ProfilePage() {
                   <p className="text-sm text-slate-200/90 mt-2">
                     {project.shortDescription}
                   </p>
+
+                  {(project.githubUrl || project.demoUrl) && (
+                    <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-emerald-300 hover:underline"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-emerald-300 hover:underline"
+                        >
+                          Démo
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
