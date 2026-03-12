@@ -26,9 +26,10 @@ import {
   SiVuedotjs,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import type { IconType } from "react-icons";
 
 type SkillIconDefinition = {
-  icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
+  icon: IconType;
   color?: string;
 };
 
@@ -80,16 +81,17 @@ function SkillChip({ name, showIcon }: { name: string; showIcon: boolean }) {
 
   const def = showIcon ? getSkillIconDefinition(name) : null;
   const Icon = def?.icon;
+  const iconSize = 16;
 
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/60 px-2.5 py-1 text-xs text-slate-200">
       {isHtmlCss ? (
         <>
-          <SiHtml5 className="h-4 w-4" style={{ color: "#e34f26" }} />
-          <SiCss className="h-4 w-4" style={{ color: "#1572B6" }} />
+          <SiHtml5 size={iconSize} color="#e34f26" />
+          <SiCss size={iconSize} color="#1572B6" />
         </>
       ) : (
-        Icon && <Icon className="h-4 w-4" style={def?.color ? { color: def.color } : undefined} />
+        Icon && <Icon size={iconSize} color={def?.color} />
       )}
       <span>{name}</span>
     </span>
@@ -97,6 +99,13 @@ function SkillChip({ name, showIcon }: { name: string; showIcon: boolean }) {
 }
 
 export default function ProfilePage() {
+  const featuredProjectOrder = [
+    "SmartERP Pro - Système de Gestion de Stock",
+    "IT Project Management System",
+    "Echeck-in Event - Système de Gestion d'Événements",
+    "Outage Alerts MG – suivi des coupures",
+  ];
+
   const mainFrameworks = new Set(["laravel", "react", "react.js", "next.js", "nextjs"]);
   const databaseNames = new Set(["mysql", "postgresql", "sqlite", "mongodb"]);
 
@@ -133,6 +142,15 @@ export default function ProfilePage() {
     .filter((s) => s.category === "soft")
     .map((s) => s.name)
     .sort((a, b) => a.localeCompare(b));
+
+  const featuredProjects = projects
+    .filter((project) => featuredProjectOrder.includes(project.title))
+    .sort(
+      (a, b) =>
+        featuredProjectOrder.indexOf(a.title) -
+        featuredProjectOrder.indexOf(b.title),
+    )
+    .slice(0, 4);
 
   return (
     <main className="relative min-h-screen bg-slate-950 text-slate-50">
@@ -316,7 +334,7 @@ export default function ProfilePage() {
             </h2>
 
             <div className="grid gap-4">
-              {projects.slice(0, 4).map((project) => (
+              {featuredProjects.map((project) => (
                 <article
                   key={project.id}
                   className="rounded-2xl border border-slate-800/80 bg-slate-900/80 px-5 py-4 text-sm shadow-sm shadow-black/40"
