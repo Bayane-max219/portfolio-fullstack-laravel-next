@@ -46,3 +46,4 @@ Route::get('/projects', [ProjectController::class, 'publicIndex']);
 Route::get('/projects/{project}', ProjectShowController::class);
 Route::get('/certificates', [CertificateController::class, 'publicIndex']);
 Route::get('/profile', [ProfileController::class, 'publicShow']);
+Route::get('/profile/pdf', [ProfileController::class, 'publicPdf']);

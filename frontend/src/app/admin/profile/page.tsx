@@ -824,7 +824,7 @@ export default function AdminProfilePage() {
                   htmlFor="websiteUrl"
                   className="block text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400"
                 >
-                  Site web
+                  Portfolio
                 </label>
                 <input
                   id="websiteUrl"

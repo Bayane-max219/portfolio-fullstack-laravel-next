@@ -227,17 +227,93 @@ body {
 
 @page {
   size: A4;
-  margin: 12mm;
+  margin: 8mm;
 }
 
 @media print {
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    zoom: 0.9;
+    background: #0b1220 !important;
+    color: #e2e8f0 !important;
+  }
+
+  *, *::before, *::after {
+    transform: none !important;
+    filter: none !important;
   }
 
   .cv-print-block {
+    break-inside: auto;
+    page-break-inside: auto;
+    box-shadow: none !important;
+    orphans: 3;
+    widows: 3;
+    margin-top: 0.45rem !important;
+    margin-bottom: 0.45rem !important;
+  }
+
+  .cv-print-block {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+
+  .cv-print-block h2 {
+    margin-bottom: 0.35rem !important;
+  }
+
+  .cv-print-block ul {
+    margin-top: 0 !important;
+  }
+
+  .cv-print-block ul,
+  .cv-print-block ol {
+    padding-left: 1rem !important;
+  }
+
+  .cv-print-block li {
+    margin-top: 0.1rem !important;
+    margin-bottom: 0.1rem !important;
+  }
+
+  .cv-print-block h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .cv-print-block h2 + * {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  .cv-print-block * {
+    box-shadow: none !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none !important;
+    display: inline;
+  }
+
+  .cv-print-links a {
+    color: inherit !important;
+  }
+
+  .cv-print-links a .cv-link-value {
+    color: #10b981 !important;
+  }
+
+  .cv-print-links a:hover .cv-link-value {
+    text-decoration: underline;
+  }
+
+  .print-break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .print-avoid-break {
     break-inside: avoid;
     page-break-inside: avoid;
   }

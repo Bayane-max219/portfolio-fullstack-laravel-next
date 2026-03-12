@@ -1,7 +1,45 @@
 import { MainNav } from "@/components/MainNav";
 import { educations, languages, profile, skills } from "@/data/profile";
+import { projects } from "@/data/projects";
 
 export default function ProfilePage() {
+  const mainFrameworks = new Set(["laravel", "react", "react.js", "next.js", "nextjs"]);
+  const databaseNames = new Set(["mysql", "postgresql", "sqlite", "mongodb"]);
+
+  const languageSkills = skills
+    .filter((s) => s.category === "language")
+    .map((s) => s.name)
+    .sort((a, b) => a.localeCompare(b));
+
+  const frameworkSkills = skills
+    .filter((s) => s.category === "framework")
+    .map((s) => s.name);
+
+  const mainFrameworkSkills = frameworkSkills
+    .filter((name) => mainFrameworks.has(name.trim().toLowerCase()))
+    .sort((a, b) => a.localeCompare(b));
+
+  const otherFrameworkSkills = frameworkSkills
+    .filter((name) => !mainFrameworks.has(name.trim().toLowerCase()))
+    .sort((a, b) => a.localeCompare(b));
+
+  const toolSkillsRaw = skills
+    .filter((s) => s.category === "tool")
+    .map((s) => s.name);
+
+  const databaseSkills = toolSkillsRaw
+    .filter((name) => databaseNames.has(name.trim().toLowerCase()))
+    .sort((a, b) => a.localeCompare(b));
+
+  const toolSkills = toolSkillsRaw
+    .filter((name) => !databaseNames.has(name.trim().toLowerCase()))
+    .sort((a, b) => a.localeCompare(b));
+
+  const softSkills = skills
+    .filter((s) => s.category === "soft")
+    .map((s) => s.name)
+    .sort((a, b) => a.localeCompare(b));
+
   return (
     <main className="relative min-h-screen bg-slate-950 text-slate-50">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -63,7 +101,6 @@ export default function ProfilePage() {
               </h2>
               <ul className="space-y-1 text-sm text-slate-200/90">
                 {profile.email && <li>Email : {profile.email}</li>}
-                {profile.phone && <li>Téléphone : {profile.phone}</li>}
                 {profile.githubUrl && (
                   <li>
                     GitHub :
@@ -87,19 +124,6 @@ export default function ProfilePage() {
                       className="ml-1 text-emerald-300 hover:underline"
                     >
                       {profile.linkedinUrl}
-                    </a>
-                  </li>
-                )}
-                {profile.websiteUrl && (
-                  <li>
-                    Portfolio :
-                    <a
-                      href={profile.websiteUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="ml-1 text-emerald-300 hover:underline"
-                    >
-                      {profile.websiteUrl}
                     </a>
                   </li>
                 )}
@@ -150,9 +174,6 @@ export default function ProfilePage() {
                     className="flex items-center justify-between text-sm"
                   >
                     <span className="text-slate-200/90">{lang.name}</span>
-                    <span className="text-xs text-slate-400">
-                      {lang.level}
-                    </span>
                   </li>
                 ))}
               </ul>
@@ -167,72 +188,57 @@ export default function ProfilePage() {
 
             <div className="grid gap-6 md:grid-cols-2">
               {[
-                { key: "language" as const, label: "Langages" },
-                { key: "framework" as const, label: "Frameworks" },
-                { key: "soft" as const, label: "Soft skills" },
-                { key: "tool" as const, label: "Outils / Bases de données" },
-              ].map((section) => {
-                const sectionSkills = skills
-                  .filter((skill) => skill.category === section.key)
-                  .sort((a, b) => b.level - a.level); // du plus grand au plus petit
-
-                if (sectionSkills.length === 0) return null;
-
-                return (
-                  <div key={section.key} className="space-y-2">
+                { title: "Langages", items: languageSkills },
+                { title: "Frameworks principaux", items: mainFrameworkSkills },
+                { title: "Autres frameworks utilisés", items: otherFrameworkSkills },
+                { title: "Bases de données", items: databaseSkills },
+                { title: "Outils & environnements", items: toolSkills },
+                { title: "Qualités (soft skills)", items: softSkills },
+              ]
+                .filter((group) => group.items.length > 0)
+                .map((group) => (
+                  <div key={group.title} className="space-y-2">
                     <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
-                      {section.label}
+                      {group.title}
                     </p>
-
-                    <div className="space-y-2">
-                      {sectionSkills.map((skill) => {
-                        const baseColor =
-                          skill.category === "language"
-                            ? "bg-sky-400"
-                            : skill.category === "framework"
-                            ? "bg-violet-400"
-                            : skill.category === "tool"
-                            ? "bg-emerald-400"
-                            : "bg-amber-400"; // soft
-
-                        const levelLabel =
-                          skill.level >= 85
-                            ? "Niveau élevé"
-                            : skill.level >= 70
-                            ? "Niveau intermédiaire"
-                            : "Niveau à renforcer";
-
-                        return (
-                          <div
-                            key={skill.name}
-                            className="space-y-1 text-sm"
-                          >
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <p className="text-slate-100">
-                                  {skill.name}
-                                </p>
-                                <p className="text-[11px] text-slate-400">
-                                  {levelLabel}
-                                </p>
-                              </div>
-                              <span className="text-xs text-slate-400">
-                                {skill.level}%
-                              </span>
-                            </div>
-                            <div className="h-2 rounded-full bg-slate-800/80">
-                              <div
-                                className={`${baseColor} h-2 rounded-full`}
-                                style={{ width: `${skill.level}%` }}
-                              />
-                            </div>
-                          </div>
-                        );
-                      })}
+                    <div className="flex flex-wrap gap-2">
+                      {group.items.map((name) => (
+                        <span
+                          key={name}
+                          className="inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/60 px-2.5 py-1 text-xs text-slate-200"
+                        >
+                          {name}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                );
-              })}
+                ))}
+            </div>
+          </section>
+
+          {/* Projets principaux */}
+          <section className="space-y-4 pb-8">
+            <h2 className="text-base font-semibold text-slate-50">
+              Projets principaux
+            </h2>
+
+            <div className="grid gap-4">
+              {projects.slice(0, 4).map((project) => (
+                <article
+                  key={project.id}
+                  className="rounded-2xl border border-slate-800/80 bg-slate-900/80 px-5 py-4 text-sm shadow-sm shadow-black/40"
+                >
+                  <p className="text-sm font-semibold text-slate-50">
+                    {project.title}
+                  </p>
+                  <p className="text-xs text-slate-300/90 mt-1">
+                    {project.stack}
+                  </p>
+                  <p className="text-sm text-slate-200/90 mt-2">
+                    {project.shortDescription}
+                  </p>
+                </article>
+              ))}
             </div>
           </section>
         </div>

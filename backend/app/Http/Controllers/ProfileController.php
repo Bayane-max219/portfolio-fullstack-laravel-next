@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Education;
 use App\Models\Language;
 use App\Models\Profile;
+use App\Models\Project;
 use App\Models\Skill;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -331,5 +333,53 @@ class ProfileController extends Controller
             'skills' => $skills,
             'languages' => $languages,
         ]);
+    }
+
+    public function publicPdf(Request $request)
+    {
+        $profile = Profile::first();
+
+        if (! $profile) {
+            abort(404, 'Profile not configured');
+        }
+
+        $profile->avatar_url = $profile->avatar_path
+            ? asset('storage/'.$profile->avatar_path)
+            : null;
+
+        $educations = Education::where('user_id', $profile->user_id)
+            ->orderByDesc('end_year')
+            ->orderByDesc('start_year')
+            ->orderByDesc('id')
+            ->get();
+
+        $skills = Skill::where('user_id', $profile->user_id)
+            ->orderBy('category')
+            ->orderByDesc('level')
+            ->orderBy('name')
+            ->get();
+
+        $languages = Language::where('user_id', $profile->user_id)
+            ->orderBy('name')
+            ->get();
+
+        $projects = Project::query()
+            ->where('is_featured', true)
+            ->orderBy('display_order')
+            ->orderBy('id')
+            ->limit(4)
+            ->get();
+
+        $pdf = Pdf::loadView('cv', [
+            'profile' => $profile,
+            'educations' => $educations,
+            'skills' => $skills,
+            'languages' => $languages,
+            'projects' => $projects,
+        ])->setPaper('a4', 'portrait')->setOptions([
+            'isRemoteEnabled' => true,
+        ]);
+
+        return $pdf->download('CV.pdf');
     }
 }

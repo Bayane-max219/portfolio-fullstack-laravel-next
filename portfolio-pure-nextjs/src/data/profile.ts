@@ -34,11 +34,9 @@ export const profile: Profile = {
   fullName: "BAYANE Miguel Singcol",
   title: "Développeur Web Fullstack (Laravel, React, Next.js)",
   location: "Antananarivo, Madagascar",
-  shortBio: `Développeur Web Fullstack basé à Antananarivo, spécialisé en Laravel, React, Next.js, Django et création d’API REST. Formé en Informatique – Risques et Décision (ESMIA), avec plusieurs projets web réalisés (ERP, gestion d’événements, e-learning, rendez-vous médicaux, management de projet…).
-
-J’ai effectué des stages en développement web (2 mois + 3 mois) et un stage de 3 mois au Call Center Accès Banque, renforçant mes compétences techniques et professionnelles.
-
-Motivé, autonome et capable de travailler sur des applications modernes, je suis ouvert aux opportunités à Antananarivo pour évoluer en tant que Développeur Fullstack.`,
+  shortBio: `Développeur Web Fullstack basé à Antananarivo, spécialisé en Laravel, React et Next.js.
+Expérience dans la création d’applications web et d’API REST avec plusieurs projets réalisés (ERP, e-learning, gestion d’événements, rendez-vous médicaux).
+Motivé, autonome et passionné par le développement d’applications modernes.`,
   avatarUrl: "/storage/avatars/JdZFcxVEOIfpjIwwsiOTpC3UkcAGQZJNxgX0WtsH.jpg",
   email: "baymi312@gmail.com",
   phone: "0348349886",
@@ -77,16 +75,20 @@ export const skills: Skill[] = [
   { name: "Java", category: "language", level: 85 },
   { name: "Python", category: "language", level: 75 },
   { name: "HTML/CSS", category: "language", level: 90 },
-  { name: "SQL (MySQL, PostgreSQL, SQLite)", category: "tool", level: 80 },
+
+  { name: "MySQL", category: "tool", level: 80 },
+  { name: "PostgreSQL", category: "tool", level: 80 },
+  { name: "SQLite", category: "tool", level: 80 },
+  { name: "MongoDB", category: "tool", level: 75 },
+
   { name: "Laravel", category: "framework", level: 85 },
-  { name: "Symfony", category: "framework", level: 85 },
   { name: "Django", category: "framework", level: 80 },
   { name: "React.js", category: "framework", level: 90 },
+  { name: "Spring Boot", category: "framework", level: 85 },
+  { name: "Symfony", category: "framework", level: 85 },
   { name: "Vue.js", category: "framework", level: 85 },
   { name: "Angular", category: "framework", level: 85 },
-  { name: "Spring Boot", category: "framework", level: 85 },
-  { name: "Hibernate / JPA", category: "framework", level: 80 },
-  { name: "Maven", category: "tool", level: 80 },
+
   { name: "Git / GitHub", category: "tool", level: 85 },
   { name: "Postman / Swagger", category: "tool", level: 75 },
   { name: "Docker", category: "tool", level: 75 },
