@@ -113,6 +113,11 @@ export default function ProfilePage() {
   const mainFrameworks = new Set(["laravel", "react", "react.js", "next.js", "nextjs"]);
   const databaseNames = new Set(["mysql", "postgresql", "sqlite", "mongodb"]);
 
+  const cmsSkills = skills
+    .filter((s) => s.category === "cms")
+    .map((s) => s.name)
+    .sort((a, b) => a.localeCompare(b));
+
   const languageSkills = skills
     .filter((s) => s.category === "language")
     .map((s) => s.name)
@@ -309,6 +314,7 @@ export default function ProfilePage() {
                 { title: "Autres frameworks utilisés", items: otherFrameworkSkills },
                 { title: "Bases de données", items: databaseSkills },
                 { title: "Outils & environnements", items: toolSkills },
+                { title: "CMS", items: cmsSkills },
                 { title: "Qualités (soft skills)", items: softSkills },
               ]
                 .filter((group) => group.items.length > 0)

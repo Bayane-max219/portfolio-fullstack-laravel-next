@@ -8,7 +8,7 @@ export type Education = {
 
 export type Skill = {
   name: string;
-  category: "language" | "framework" | "tool" | "soft";
+  category: "language" | "framework" | "tool" | "soft" | "cms";
   level: number;
 };
 
@@ -89,8 +89,8 @@ export const skills: Skill[] = [
   { name: "Vue.js", category: "framework", level: 85 },
   { name: "Angular", category: "framework", level: 85 },
 
-  { name: "WordPress", category: "tool", level: 85 },
-  { name: "Shopify", category: "tool", level: 70 },
+  { name: "WordPress", category: "cms", level: 85 },
+  { name: "Shopify", category: "cms", level: 70 },
   { name: "Git / GitHub", category: "tool", level: 85 },
   { name: "Postman / Swagger", category: "tool", level: 75 },
   { name: "Docker", category: "tool", level: 75 },
