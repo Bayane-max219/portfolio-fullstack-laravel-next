@@ -37,13 +37,7 @@ export default function VitrinePage() {
 
           {diplomaDocuments.length > 0 && (
             <section className="space-y-4">
-              <div className="flex items-center justify-between gap-2">
-                <h2 className="text-lg font-semibold text-slate-50">Diplômes</h2>
-                <span className="text-xs text-slate-300/80">
-                  Diplômes universitaires scannés et ajoutés dans l'espace d'administration du portfolio
-                  fullstack original.
-                </span>
-              </div>
+              <h2 className="text-lg font-semibold text-slate-50">Diplômes</h2>
 
               <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
                 {diplomaDocuments.map((doc) => (
@@ -90,13 +84,7 @@ export default function VitrinePage() {
           )}
 
           <section className="space-y-4">
-            <div className="flex items-center justify-between gap-2">
-              <h2 className="text-lg font-semibold text-slate-50">Relevés de notes</h2>
-              <span className="text-xs text-slate-300/80">
-                Relevés de notes universitaires scannés et ajoutés dans l'espace d'administration du
-                portfolio fullstack original.
-              </span>
-            </div>
+            <h2 className="text-lg font-semibold text-slate-50">Relevés de notes</h2>
 
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
               {transcripts.map((doc) => (
@@ -142,12 +130,7 @@ export default function VitrinePage() {
           </section>
 
           <section className="space-y-4">
-            <div className="flex items-center justify-between gap-2">
-              <h2 className="text-lg font-semibold text-slate-50">Certificats et attestations</h2>
-              <span className="text-xs text-slate-300/80">
-                Certificats de formation, attestations de stage et autres documents importants.
-              </span>
-            </div>
+            <h2 className="text-lg font-semibold text-slate-50">Certificats et attestations</h2>
 
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
               {otherCertificates.map((doc) => (
@@ -265,12 +248,7 @@ export default function VitrinePage() {
           </section>
 
           <section className="space-y-4 pb-6">
-            <div className="flex items-center justify-between gap-2">
-              <h2 className="text-lg font-semibold text-slate-50">Autres projets</h2>
-              <span className="text-xs text-slate-300/80">
-                Projets académiques et personnels mis en avant dans le portfolio.
-              </span>
-            </div>
+            <h2 className="text-lg font-semibold text-slate-50">Autres projets</h2>
 
             <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
               {otherProjects.map((project) => (
