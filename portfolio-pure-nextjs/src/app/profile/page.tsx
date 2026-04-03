@@ -19,11 +19,13 @@ import {
   SiPostman,
   SiPython,
   SiReact,
+  SiShopify,
   SiSpring,
   SiSqlite,
   SiSwagger,
   SiSymfony,
   SiVuedotjs,
+  SiWordpress,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -63,6 +65,8 @@ function getSkillIconDefinition(name: string): SkillIconDefinition | null {
     "sqlite": { icon: SiSqlite, color: "#003B57" },
     "mongodb": { icon: SiMongodb, color: "#47A248" },
 
+    "wordpress": { icon: SiWordpress, color: "#21759B" },
+    "shopify": { icon: SiShopify, color: "#96BF48" },
     "docker": { icon: SiDocker, color: "#2496ED" },
     "git / github": { icon: SiGithub, color: "#ffffff" },
     "git": { icon: SiGit, color: "#F05032" },

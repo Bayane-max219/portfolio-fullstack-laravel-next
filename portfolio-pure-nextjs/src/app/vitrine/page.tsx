@@ -2,11 +2,15 @@ import { MainNav } from "@/components/MainNav";
 import { certificates, transcripts } from "@/data/documents";
 import { projects } from "@/data/projects";
 
+const wordpressProjectIds = [18, 19, 20, 21];
+
 export default function VitrinePage() {
   const diplomaDocuments = certificates.filter((doc) => doc.kind === "diplome");
   const otherCertificates = certificates.filter(
     (doc) => doc.kind === "certificat" || doc.kind === "attestation",
   );
+  const wordpressProjects = projects.filter((p) => wordpressProjectIds.includes(p.id));
+  const otherProjects = projects.filter((p) => !wordpressProjectIds.includes(p.id));
   return (
     <main className="relative min-h-screen bg-slate-950 text-slate-50">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -188,16 +192,88 @@ export default function VitrinePage() {
             </div>
           </section>
 
+          <section className="space-y-4">
+            <div className="flex items-center gap-3">
+              <h2 className="text-lg font-semibold text-slate-50">Projets WordPress & CMS</h2>
+              <span className="rounded-full bg-blue-500/15 border border-blue-400/40 px-2.5 py-0.5 text-[11px] font-medium text-blue-300">
+                4 sites déployés en ligne
+              </span>
+            </div>
+            <p className="text-sm text-slate-300/80">
+              Thèmes WordPress 100% custom (sans page builder) — CPT, AJAX, WooCommerce, hooks, meta boxes.
+            </p>
+
+            <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
+              {wordpressProjects.map((project) => (
+                <article
+                  key={project.id}
+                  className="group overflow-hidden rounded-2xl border border-blue-900/40 bg-slate-900/80 shadow-sm shadow-black/40"
+                >
+                  <a href={project.demoUrl} target="_blank" rel="noreferrer" className="block">
+                    <div className="relative h-56 w-full overflow-hidden bg-slate-900">
+                      {project.coverImageUrl ? (
+                        <img
+                          src={project.coverImageUrl}
+                          alt={project.title}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="h-full w-full bg-[radial-gradient(circle_at_0%_0%,#3b82f6_0,#1d4ed8_30%,transparent_60%)]" />
+                      )}
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full bg-slate-950/80 px-2.5 py-1 text-[11px] font-medium text-blue-300 backdrop-blur-sm">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        En ligne
+                      </div>
+                    </div>
+                  </a>
+                  <div className="space-y-2 px-5 py-4 text-sm">
+                    <p className="text-[11px] uppercase tracking-[0.25em] text-blue-300/80">
+                      {project.stack}
+                    </p>
+                    <h3 className="text-base font-semibold text-slate-50">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-slate-200/90">
+                      {project.shortDescription}
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-3 text-[11px] text-slate-300/90">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center rounded-full border border-slate-600/80 px-3 py-1 hover:bg-slate-800"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center rounded-full border border-emerald-400/80 px-3 py-1 text-emerald-300 hover:bg-emerald-500/10"
+                        >
+                          Voir le site
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section className="space-y-4 pb-6">
             <div className="flex items-center justify-between gap-2">
-              <h2 className="text-lg font-semibold text-slate-50">Projets sélectionnés</h2>
+              <h2 className="text-lg font-semibold text-slate-50">Autres projets</h2>
               <span className="text-xs text-slate-300/80">
                 Projets académiques et personnels mis en avant dans le portfolio.
               </span>
             </div>
 
             <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
-              {projects.map((project) => (
+              {otherProjects.map((project) => (
                 <article
                   key={project.id}
                   className="group overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/80 shadow-sm shadow-black/40"

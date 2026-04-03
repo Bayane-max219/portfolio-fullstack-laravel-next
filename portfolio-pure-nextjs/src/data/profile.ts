@@ -32,10 +32,10 @@ export type Profile = {
 
 export const profile: Profile = {
   fullName: "BAYANE Miguel Singcol",
-  title: "Développeur Web Fullstack (Laravel, React, Next.js)",
+  title: "Développeur Web Fullstack & CMS (Laravel, React, Next.js, WordPress)",
   location: "Antananarivo, Madagascar",
-  shortBio: `Développeur Web Fullstack basé à Antananarivo, spécialisé en Laravel, React et Next.js.
-Expérience dans la création d’applications web et d’API REST avec plusieurs projets réalisés (ERP, e-learning, gestion d’événements, rendez-vous médicaux).
+  shortBio: `Développeur Web Fullstack basé à Antananarivo, spécialisé en Laravel, React et Next.js, avec une expertise CMS en WordPress (thèmes custom, WooCommerce, CPT, AJAX) et Shopify.
+Expérience dans la création d’applications web, d’API REST et de sites CMS avec plusieurs projets réalisés (ERP, e-learning, gestion d’événements, sites WordPress déployés).
 Motivé, autonome et passionné par le développement d’applications modernes.`,
   avatarUrl: "/storage/avatars/JdZFcxVEOIfpjIwwsiOTpC3UkcAGQZJNxgX0WtsH.jpg",
   email: "baymi312@gmail.com",
@@ -89,6 +89,8 @@ export const skills: Skill[] = [
   { name: "Vue.js", category: "framework", level: 85 },
   { name: "Angular", category: "framework", level: 85 },
 
+  { name: "WordPress", category: "tool", level: 85 },
+  { name: "Shopify", category: "tool", level: 70 },
   { name: "Git / GitHub", category: "tool", level: 85 },
   { name: "Postman / Swagger", category: "tool", level: 75 },
   { name: "Docker", category: "tool", level: 75 },

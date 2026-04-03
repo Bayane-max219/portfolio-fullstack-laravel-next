@@ -11,6 +11,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 18,
+    title: "Église Alliance Évangélique — Thème WordPress Custom",
+    stack: "WordPress Custom Theme — PHP, JS, MySQL",
+    category: "fullstack",
+    shortDescription:
+      "Thème WordPress 100% custom pour une église : événements hebdomadaires (CPT + meta boxes), annonces avec expiration automatique, galerie photos (max 7/semaine), message YouTube/SoundCloud, carte Google Maps, interface admin dédiée.",
+    githubUrl: "https://github.com/Bayane-max219/eglise-alliance-evangelique-wordpress",
+    demoUrl: "https://eglise-alliance-evangelique.infinityfreeapp.com",
+    coverImageUrl: "/storage/project_media/wp-alliance-evangelique.png",
+  },
+  {
+    id: 19,
+    title: "Immo Tana — Thème WordPress Immobilier Custom",
+    stack: "WordPress Custom Theme — PHP OOP, AJAX, WP_Query",
+    category: "fullstack",
+    shortDescription:
+      "Thème WordPress immobilier 100% custom : CPT bien_immo, taxonomies (type_bien, quartier), CRUD backend complet, AJAX filter sans rechargement, formulaire contact sauvegardé en DB, intégration WhatsApp, design Navy + Gold.",
+    githubUrl: "https://github.com/Bayane-max219/immo-tana",
+    demoUrl: "https://immo-tana.infinityfreeapp.com",
+    coverImageUrl: "/storage/project_media/wp-immo-tana.png",
+  },
+  {
+    id: 20,
+    title: "Tany Hatsaka — Boutique WooCommerce Custom",
+    stack: "WordPress + WooCommerce — PHP, AJAX, Schema.org",
+    category: "fullstack",
+    shortDescription:
+      "Boutique e-commerce d'artisanat malgache : WooCommerce custom (template overrides), AJAX filter + pagination, CPT Artisan, mini-cart temps réel, checkout complet, SEO Schema.org JSON-LD, performance optimisée.",
+    githubUrl: "https://github.com/Bayane-max219/tany-hatsaka",
+    demoUrl: "https://tany-hatsaka.infinityfreeapp.com",
+    coverImageUrl: "/storage/project_media/wp-tany-hatsaka.png",
+  },
+  {
+    id: 21,
+    title: "MediCare Tana — Thème WordPress Clinique Médicale",
+    stack: "WordPress Custom Theme — PHP, Fetch API, CPT",
+    category: "fullstack",
+    shortDescription:
+      "Thème WordPress pour clinique médicale : CPT Médecins et Rendez-vous, formulaire AJAX sécurisé (nonce), stockage en DB, navigation responsive, animations scroll, SEO meta auto, Google Maps intégré.",
+    githubUrl: "https://github.com/Bayane-max219/medicare-tana-wp-theme",
+    demoUrl: "http://medicare-tana.infinityfreeapp.com",
+    coverImageUrl: "/storage/project_media/wp-medicare-tana.png",
+  },
+  {
     id: 2,
     title: "Echeck-in Event - Système de Gestion d'Événements",
     stack: "Symfony + API mobile Flutter",
