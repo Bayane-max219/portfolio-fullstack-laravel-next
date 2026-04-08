@@ -4,6 +4,41 @@
   color-scheme: dark light;
 }
 
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Cacher nav + bouton + effets décoratifs */
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Fond sombre forcé */
+  html, body {
+    background: #020617 !important;
+    color: #f8fafc !important;
+  }
+
+  /* Supprimer marges de page */
+  @page {
+    margin: 10mm 10mm;
+    size: A4;
+  }
+
+  /* Eviter les coupures dans les cards */
+  article, li, section {
+    break-inside: avoid;
+  }
+
+  /* Les blobs de fond (absolute) → cacher */
+  .pointer-events-none.absolute {
+    display: none !important;
+  }
+}
+
 *,
 *::before,
 *::after {

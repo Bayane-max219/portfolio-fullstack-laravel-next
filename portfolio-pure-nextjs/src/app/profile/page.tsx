@@ -1,4 +1,5 @@
 import { MainNav } from "@/components/MainNav";
+import { PrintButton } from "@/components/PrintButton";
 import { educations, languages, profile, skills } from "@/data/profile";
 import { projects } from "@/data/projects";
 import {
@@ -250,13 +251,7 @@ export default function ProfilePage() {
                 )}
               </ul>
               <div className="pt-3">
-                <a
-                  href="/storage/Bayane_Miguel_Singcol_CV.pdf"
-                  download
-                  className="inline-flex items-center rounded-full border border-emerald-400/80 bg-emerald-500/90 px-4 py-1.5 text-xs font-semibold text-slate-950 shadow-sm hover:bg-emerald-400/90"
-                >
-                  Télécharger le CV (PDF)
-                </a>
+                <PrintButton />
               </div>
             </article>
           </section>
