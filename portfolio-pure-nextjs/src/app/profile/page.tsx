@@ -223,6 +223,7 @@ export default function ProfilePage() {
               </h2>
               <ul className="space-y-1 text-sm text-slate-200/90">
                 {profile.email && <li>Email : {profile.email}</li>}
+                {profile.phone && <li>Téléphone : {profile.phone}</li>}
                 {profile.githubUrl && (
                   <li>
                     GitHub :
@@ -230,7 +231,7 @@ export default function ProfilePage() {
                       href={profile.githubUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="ml-1 text-emerald-300 hover:underline"
+                      className="ml-1 text-emerald-300 hover:underline break-all"
                     >
                       {profile.githubUrl}
                     </a>
@@ -243,7 +244,7 @@ export default function ProfilePage() {
                       href={profile.linkedinUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="ml-1 text-emerald-300 hover:underline"
+                      className="ml-1 text-emerald-300 hover:underline break-all"
                     >
                       {profile.linkedinUrl}
                     </a>
@@ -290,6 +291,9 @@ export default function ProfilePage() {
                     className="flex items-center justify-between text-sm"
                   >
                     <span className="text-slate-200/90">{lang.name}</span>
+                    {lang.level && (
+                      <span className="text-xs text-slate-400">{lang.level}</span>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -98,6 +98,7 @@ export const skills: Skill[] = [
   { name: "Travail en équipe", category: "soft", level: 75 },
   { name: "Apprentissage rapide", category: "soft", level: 90 },
   { name: "Communication technique", category: "soft", level: 70 },
+  { name: "Autonomie", category: "soft", level: 85 },
 ];
 
 export const languages: Language[] = [
