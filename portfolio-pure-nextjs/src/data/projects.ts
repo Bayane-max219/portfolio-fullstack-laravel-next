@@ -57,30 +57,30 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Echeck-in Event - Système de Gestion d'Événements",
-    stack: "Symfony + API mobile Flutter",
+    stack: "Symfony 6.3 + Flutter + Docker",
     category: "fullstack",
     shortDescription:
-      "Solution numérique complète pour la gestion d'événements avec invitations électroniques, QR codes uniques et contrôle d'accès mobile (projet de stage de 3 mois).",
+      "Plateforme de gestion d'événements conteneurisée avec Docker (Symfony 6.3 + MySQL + Nginx) : invitations électroniques, QR codes uniques, contrôle d'accès mobile Flutter (projet de stage de 3 mois).",
     githubUrl: "https://github.com/Bayane-max219/Echeck-in-Event",
     coverImageUrl: "/storage/project_media/gm30qOLjmziLNFBa0ENXLmam9a71mBLOxjFSO4QN.png",
   },
   {
     id: 3,
     title: "IT Project Management System",
-    stack: "React + Django API",
+    stack: "React + Django API + Docker",
     category: "fullstack",
     shortDescription:
-      "Application web complète de gestion de projets IT avec système de pointage des employés et suivi client.",
+      "Application web fullstack conteneurisée avec Docker (React + Django REST API + PostgreSQL + Nginx) : gestion de projets IT, suivi clients et pointage des employés.",
     githubUrl: "https://github.com/Bayane-max219/IT-Project-Management-System",
     coverImageUrl: "/storage/project_media/WkKTJAgRFYeKPS9kzuskr0CFTcLpFXoG5Rl8UqST.png",
   },
   {
     id: 4,
     title: "SmartERP Pro - Système de Gestion de Stock",
-    stack: "Vue.js 3 + Laravel API",
+    stack: "Vue.js 3 + Laravel API + Docker",
     category: "fullstack",
     shortDescription:
-      "Un système ERP complet pour la gestion de stock et ventes, développé avec Vue.js 3 et Laravel (avec support localStorage pour fonctionnement hors-ligne).",
+      "ERP web fullstack conteneurisé avec Docker (Vue.js 3 + Laravel API + MySQL + Nginx) : gestion des stocks, point de vente, reporting et support hors-ligne (localStorage).",
     githubUrl: "https://github.com/Bayane-max219/Gestion-de-stock",
     coverImageUrl: "/storage/project_media/C8btqwiI8BTPEFmCVRLVCk7NDiK3qV6rwVj1qZlp.png",
   },
@@ -167,10 +167,10 @@ export const projects: Project[] = [
   {
     id: 13,
     title: "Outage Alerts MG – suivi des coupures",
-    stack: "NestJS API + Angular 17 frontend",
+    stack: "Angular 17 + NestJS API + Docker",
     category: "fullstack",
     shortDescription:
-      "Plateforme complète inspirée du contexte JIRAMA pour suivre et gérer les coupures d'électricité / eau, avec rôles (client, agent, admin), API NestJS et frontend Angular 17.",
+      "Plateforme conteneurisée avec Docker (Angular 17 + NestJS + SQLite) : suivi des coupures d'électricité/eau inspiré du contexte JIRAMA, avec rôles (client, agent, admin) et API REST.",
     githubUrl: "https://github.com/Bayane-max219/outage-alerts-mg",
     coverImageUrl: "/storage/project_media/01-Outage_Jirama.jpg",
   },
