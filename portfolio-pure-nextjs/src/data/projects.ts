@@ -70,7 +70,7 @@ export const projects: Project[] = [
     stack: "React + Django API + Docker",
     category: "fullstack",
     shortDescription:
-      "Application web fullstack conteneurisée avec Docker (React + Django REST API + PostgreSQL + Nginx) : gestion de projets IT, suivi clients et pointage des employés.",
+      "Application web fullstack conteneurisée avec Docker (React + Django REST API + PostgreSQL + Nginx) : gestion de projets IT, suivi des clients et pointage des employés.",
     githubUrl: "https://github.com/Bayane-max219/IT-Project-Management-System",
     coverImageUrl: "/storage/project_media/WkKTJAgRFYeKPS9kzuskr0CFTcLpFXoG5Rl8UqST.png",
   },
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     stack: "Vue.js 3 + Laravel API + Docker",
     category: "fullstack",
     shortDescription:
-      "ERP web fullstack conteneurisé avec Docker (Vue.js 3 + Laravel API + MySQL + Nginx) : gestion des stocks, point de vente, reporting et support hors-ligne (localStorage).",
+      "ERP web fullstack conteneurisé avec Docker (Vue.js 3 + Laravel API + MySQL + Nginx) : gestion des stocks, point de vente, reporting et support hors ligne (localStorage).",
     githubUrl: "https://github.com/Bayane-max219/Gestion-de-stock",
     coverImageUrl: "/storage/project_media/C8btqwiI8BTPEFmCVRLVCk7NDiK3qV6rwVj1qZlp.png",
   },
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     stack: "Angular 17 + NestJS API + Docker",
     category: "fullstack",
     shortDescription:
-      "Plateforme conteneurisée avec Docker (Angular 17 + NestJS + SQLite) : suivi des coupures d'électricité/eau inspiré du contexte JIRAMA, avec rôles (client, agent, admin) et API REST.",
+      "Plateforme conteneurisée avec Docker (Angular 17 + NestJS + SQLite) : suivi des coupures d'électricité et d'eau inspiré du contexte JIRAMA, avec rôles (client, agent, admin) et API REST.",
     githubUrl: "https://github.com/Bayane-max219/outage-alerts-mg",
     coverImageUrl: "/storage/project_media/01-Outage_Jirama.jpg",
   },

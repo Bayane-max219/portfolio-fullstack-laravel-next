@@ -61,7 +61,7 @@ export const educations: Education[] = [
     endYear: 2023,
   },
   {
-    school: "Collège Sacré Coeur Tsianaloka (Tuléar)",
+    school: "Collège Sacré-Cœur Tsianaloka (Tuléar)",
     degree: "Baccalauréat – Série D",
     location: "Tuléar, Madagascar",
     startYear: 2019,
