@@ -11,6 +11,37 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 22,
+    title: "Talanty MG — Marketplace Freelance Madagascar",
+    stack: "Spring Boot + Node.js + Next.js + Docker",
+    category: "fullstack",
+    shortDescription:
+      "Marketplace de services freelance pour Madagascar — Architecture 3 couches : Spring Boot (API données) + Node.js (logique métier) + Next.js (frontend) | PostgreSQL + Docker.",
+    githubUrl: "https://github.com/Bayane-max219/talanty-mg",
+    coverImageUrl: "/storage/project_media/01-talenty.png",
+  },
+  {
+    id: 23,
+    title: "GPS Fleet Management — Simulation Traccar",
+    stack: "Traccar + Docker + MariaDB + OsmAnd",
+    category: "fullstack",
+    shortDescription:
+      "Simulation de gestion de flotte GPS avec Traccar, Docker, MariaDB et le protocole OsmAnd — suivi de 5 véhicules en temps réel à Antananarivo, Madagascar.",
+    githubUrl: "https://github.com/Bayane-max219/traccar-fleet-simulation",
+    coverImageUrl: "/storage/project_media/02-Gps.png",
+  },
+  {
+    id: 24,
+    title: "Lumine — Thème Shopify OS 2.0 Custom",
+    stack: "Shopify Liquid — OS 2.0",
+    category: "fullstack",
+    shortDescription:
+      "Thème Shopify OS 2.0 100% custom en Liquid — boutique fashion : sections dynamiques, variantes produits, AJAX add-to-cart & cart drawer, UI responsive, optimisé performance et SEO. Démo protégée par mot de passe : yeedow.",
+    githubUrl: "https://github.com/Bayane-max219/lumine-shopify-theme",
+    demoUrl: "https://lumine-fashion-store.myshopify.com/",
+    coverImageUrl: "/storage/project_media/03-Shopify.png",
+  },
+  {
     id: 18,
     title: "Église Alliance Évangélique — Thème WordPress Custom",
     stack: "WordPress Custom Theme — PHP, JS, MySQL",
